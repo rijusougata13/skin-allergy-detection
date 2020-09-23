@@ -41,7 +41,7 @@ def add_message():
     f.write(file)
     f.close()
     img = image.load_img('upload.png', target_size=(128, 128))
-    image_classifier = load_model('./cat_dog_classifier_v1.h5')
+    image_classifier = load_model('cat_dog_classifier_v1.h5')
     x = image.img_to_array(img)
     x = np.expand_dims(x, axis=0)
     x = preprocess_input(x)
