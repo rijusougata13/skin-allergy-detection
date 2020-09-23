@@ -7,6 +7,9 @@
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
   },
+  "engines": {
+    "node": "12.x"
+  },
   "scripts": {
     "start": "gunicorn server.app:app",
     "build": "cd client && npm run build"

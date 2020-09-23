@@ -4,6 +4,9 @@
   "description": "",
   "keywords": [],
   "main": "src/index.js",
+  "engines": {
+    "node": "12.x"
+  },
   "dependencies": {
     "axios": "^0.20.0",
     "bootstrap": "4.5.2",
