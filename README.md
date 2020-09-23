@@ -25,7 +25,9 @@ Ensure that you have the following tools available on your machine;
 While in your preferred terminal;
 
 Start by cloning the repository to your local machine
-
+```bash
+git clone https://github.com/rijusougata13/skin-allergy-detection.git
+```
 Make and activate a python virtual environment using `virtualenv`
 
 ```bash
@@ -41,11 +43,17 @@ pip3 install -r requirements.txt
 ```
 
 ```bash
-cd react-app/
+cd client/
 ```
 
 ```bash
-yarn install
+npm install
+```
+
+## build your app
+
+```bash
+npm build
 ```
 
 ## Serving the application
@@ -53,11 +61,11 @@ yarn install
 You can start a local server by running
 
 ```bash
-cd flask-server
-python3 main.py
+cd server
+python3 app.py
 ```
 
-visit http://127.0.0.1:5000/ to view your application.
+visit http://127.0.0.1:8000/ to view your application.
 
 ## Built With
 
