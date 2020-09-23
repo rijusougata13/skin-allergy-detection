@@ -22,16 +22,9 @@ image_classifier = load_model('cat_dog_classifier_v1.h5')
 def index():
     return app.send_static_file('index.html')
 #, flask_token="Hello world"
+guess=0
 
 
-@app.route('/api',methods=['GET'])
-def api():
-    player_id ='d'
-   
-    return{
-        'userid':'1234',
-        'name':player_id,
-    }
 @app.route('/api/uploadfile', methods=['GET', 'POST'])
 @cross_origin()
 def add_message():
@@ -56,6 +49,17 @@ def add_message():
         'prediction':guess
         
     }
-
+@app.route('/api',methods=['GET'])
+def api():
+    player_id ='d'
+   
+    # return{
+    #     'userid':'1234',
+    #     'name':player_id,
+    # }
+    return{
+        'prediction':guess
+        
+    }
 if __name__ == '__main__':
     app.run(port=(os.getenv('PORT') if os.getenv('PORT') else 8000), debug=False)
