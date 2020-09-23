@@ -17,7 +17,7 @@ app = Flask(__name__, static_folder='../client/build/', static_url_path='/')
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 app.config['UPLOAD_FOLDER'] = os.path.join('static/images')
-
+image_classifier = load_model('cat_dog_classifier_v1.h5')
 @app.route('/')
 def index():
     return app.send_static_file('index.html')
@@ -41,7 +41,7 @@ def add_message():
     f.write(file)
     f.close()
     img = image.load_img('upload.png', target_size=(128, 128))
-    image_classifier = load_model('cat_dog_classifier_v1.h5')
+    
     x = image.img_to_array(img)
     x = np.expand_dims(x, axis=0)
     x = preprocess_input(x)
